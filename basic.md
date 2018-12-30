@@ -1,4 +1,4 @@
-1. Hàm unichr() dùng để làm gì?
+1. Phân biệt chr() và unichr().
 2. Hàm ord() dùng để làm gì?
 3. Hàm hex() dùng để làm gì?
 4. Hàm oct() dùng để làm gì?
