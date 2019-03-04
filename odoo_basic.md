@@ -61,6 +61,8 @@ Trường `is_expired` sẽ được tính toán dựa trên điều kiện sau:
 							  nếu thời điểm tạo quá 30 phút so với hiện tại
 							  nếu tồn tại mã otp khác mới hơn có `user_id` == `user_id` của otp hiện tại (...)
 
+Hiện thị trên `formview` tùy ý đặt vị trí.
+
 Bài 3
 Tạo `listview` `formview` cho model `otp.code`
 	+ Đối với `listview`
