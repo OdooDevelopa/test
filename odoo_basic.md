@@ -1,5 +1,3 @@
-# facebook_developa
-
 Module về OTP:
 
 Mô tà về module như sau (chỉ để hiểu)
@@ -52,6 +50,17 @@ Kế thừa model `res.users` và thêm phương thức:
 		.. phương thức này đánh dấu user đã được xác thực
 		.. trả về `true` nếu thực hiện thành công
 
+Bài 2.3
+Tạo module `hoang_otp_code_ext`
+Kế thừa model `otp.code` thêm trường:
+	+ `is_expired`: Bool, compute (mã này đã hết hạn hay chưa)
+	+ `otp_code`: thêm thuộc tính `required`
+	
+Trường `is_expired` sẽ được tính toán dựa trên điều kiện sau:
+	+  `is_expired` là `true` nếu mã otp này đã được sử dụng hoặc
+							  nếu thời điểm tạo quá 30 phút so với hiện tại
+							  nếu tồn tại mã otp khác mới hơn có `user_id` == `user_id` của otp hiện tại (...)
+
 Bài 3
 Tạo `listview` `formview` cho model `otp.code`
 	+ Đối với `listview`
@@ -81,4 +90,5 @@ Bài 5
 Tạo automated test cho module trên với test case sau:
 	... tobe continue ...
 
-
+Bài 6
+Tạo `schedule action` model `ir.cron` tự động xóa những bản ghi model `otp.code` đã được sử dụng hoặc đã hết hạn quá 30 phút.
