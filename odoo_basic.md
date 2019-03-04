@@ -1,3 +1,5 @@
+# facebook_developa
+
 Module về OTP:
 
 Mô tà về module như sau (chỉ để hiểu)
@@ -62,6 +64,21 @@ Tạo `listview` `formview` cho model `otp.code`
 
 
 Bài 4
+Tạo `http.route` có tên `/otp-code/validete-otp/`
+	+ type `json`, auth `none`
+	+ nhận vào tham số `user_id : int`, `otp_code : char`
+	+ trả về: 
+		.. nếu validate thành công `{'status': 'success'}`
+		.. nếu validate thất bại `{'status': 'fail'}`
+	+ route này thực hiện các nhiệm vụ sau:
+		.. kiểm tra otp truyền vào có hợp lệ thông qua phương thức `check_otp_code` của model `otp.code`
+		.. nếu hợp lệ đánh dấu rằng mã otp dã được sử dụng thông qua phương thức `mark_as_used`
+		.. sau đó đánh dấu người dùng này đã được xác thực thông qua phương thức `validate_by_otp`
+		.. nếu qua tất cả các bước trên validate thành công, ngược lại thì thất bại.
+Kiểm sử dụng công cụ `postman` kiểm tra route trên và chụp ảnh gửi kèm bài nộp.
 
+Bài 5
+Tạo automated test cho module trên với test case sau:
+	... tobe continue ...
 
 
