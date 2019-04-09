@@ -20,7 +20,7 @@ Hiện trường `user_type` ra formview và listview của model `res.users`
 
 Bài 2.1
 Tạo model `otp.code` gồm các trường:
-	+ `user_id`: m2o đến `res.users` (người nào sở hữu otp này)
+	+ `user_id`: m2o đến `res.users` (người nào sở hữu otp này, lưu ý: khi user bị xóa, toàn bộ otp của user cũng bị xóa theo)
 	+ `otp_code`: Char (mã otp là gì)
 	+ `is_used`: Bool (đã được sử dụng hay chưa?)
 	+ `create_date`: datetime (thời điểm tạo otp) (thực ra trường này ko cần tạo vì khi tạo một model bình thường odoo đã có sẵn)
