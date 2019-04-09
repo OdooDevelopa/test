@@ -26,6 +26,7 @@ Tạo model `otp.code` gồm các trường:
 + `otp_code`: Char (mã otp là gì)
 + `is_used`: Bool (đã được sử dụng hay chưa?)
 + `create_date`: datetime (thời điểm tạo otp) (thực ra trường này ko cần tạo vì khi tạo một model bình thường odoo đã có sẵn)
+
 Thêm các phương thức:
 + `create_otp_code`: 
 
@@ -37,6 +38,12 @@ Thêm các phương thức:
 		* otp_code là mã OTP được tạo ngẫu nhiên là chuỗi gồm 6 ký tự số. Ví dụ: `'323532'`, `'945804'`
 		* is_used là false
 		* create_date là thời gian hiện tại
+	
+	- Lưu ý: trong vòng 30 phút không được tạo quá 3 OTP trên cùng 1 người dùng
+	
++ `is_spam_otp`:
+	- nhận vào `user_id`
+	- trả về `true | false` nếu người dùng này đang spam quá 3 otp trong vòng 30 phút trở lại đây
 		
 + `check_otp_code`:
 
