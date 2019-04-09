@@ -90,7 +90,10 @@ Kiểm sử dụng công cụ `postman` kiểm tra route trên và chụp ảnh 
 
 Bài 5
 Tạo automated test cho module trên với test case sau:
-	... tobe continue ...
+	- Tạo liên tiếp 4 record otp
+	- Với 3 otp đầu, kiểm tra độ dài otp có bằng 6 & chưa được sử dụng
+	- với otp  thứ 4, kiểm tra phải đưa ra kết quả đây là otp spam
+	- với 3 otp đầu, kiểm tra otp có hợp lệ (expect: 2 cái đầu không hợp lệ, cái thứ 3 hợp lệ)
 
 Bài 6
 Tạo `schedule action` model `ir.cron` tự động xóa những bản ghi model `otp.code` đã được sử dụng hoặc đã hết hạn quá 30 phút.
