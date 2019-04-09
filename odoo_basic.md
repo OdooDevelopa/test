@@ -121,4 +121,4 @@ Tạo automated test cho module trên với test case sau:
 - với 3 otp đầu, kiểm tra otp có hợp lệ (expect: 2 cái đầu không hợp lệ, cái thứ 3 hợp lệ)
 
 # Bài 6
-Tạo `schedule action` model `ir.cron` tự động xóa những bản ghi model `otp.code` đã được sử dụng hoặc đã hết hạn quá 30 phút.
+Tạo `schedule action` model `ir.cron` tự động xóa những bản ghi model `otp.code` đã được sử dụng hoặc quá 30 phút mà chưa được sử dụng.
