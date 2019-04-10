@@ -122,3 +122,6 @@ Tạo automated test cho module trên với test case sau:
 
 # Bài 6
 Tạo `schedule action` model `ir.cron` tự động xóa những bản ghi model `otp.code` đã được sử dụng hoặc quá 30 phút mà chưa được sử dụng.
+
+# Bài 7
+Gửi email chứa mã OTP cho người dùng
