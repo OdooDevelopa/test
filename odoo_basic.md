@@ -4,10 +4,11 @@ Mô tà về module như sau (chỉ để hiểu)
 - Tạo một module về OTP để lưu lại các mã otp được gửi đi bởi hệ thống
 - Tự động xóa mã otp đã được sử dụng (định kỳ)
 - Module này nhằm mục đích kiểm tra mã OTP thông qua một request http (hoặc json) đến server Odoo
-- Khi một người dùng đăng ký và điền số điện thoại, sẽ tự động gửi về mã OTP để người dùng nhập vào, hệ thống sẽ xác nhận mã điền vào có đúng hay không.
+- Khi một người dùng đăng ký và điền email, hệ thống sẽ tự động gửi về mã OTP vào email của người dùng.
+- Người dùng nhập đúng mã OTP để hoàn tất quá trình đăng ký
 
 #### Khởi động:
-Tạo module tên `hoang_otp_code`
+Tạo module tên `dev_otp_code`
 
 
 # Bài 1.
@@ -115,10 +116,12 @@ Kiểm sử dụng công cụ `postman` kiểm tra route trên và chụp ảnh 
 
 # Bài 5
 Tạo automated test cho module trên với test case sau:
-- Tạo liên tiếp 4 record otp
-- Với 3 otp đầu, kiểm tra độ dài otp có bằng 6 & chưa được sử dụng
-- với otp  thứ 4, kiểm tra phải đưa ra kết quả đây là otp spam
-- với 3 otp đầu, kiểm tra otp có hợp lệ (expect: 2 cái đầu không hợp lệ, cái thứ 3 hợp lệ)
+- Tạo liên tiếp 4 records otp
+- Với 3 otp đầu
+  - kiểm tra xem độ dài otp có bằng 6 ký tự & chưa được sử dụng hay không?
+  - otp 1 và otp 2 phải là những otp không hợp lệ nếu dùng để đăng ký tài khoản
+  - otp 3 hợp lệ để đăng ký tài khoản
+- với otp thứ 4, kiểm tra và đưa ra kết quả đây là otp spam
 
 # Bài 6
 Tạo `schedule action` model `ir.cron` tự động xóa những bản ghi model `otp.code` đã được sử dụng hoặc quá 30 phút mà chưa được sử dụng.
